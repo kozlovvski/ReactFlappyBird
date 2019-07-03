@@ -1,68 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project aims to recreate a popular Flappy Bird game in React & Redux.
+## How will I do that
 
-## Available Scripts
+### 1. Describe the project
 
-In the project directory, you can run:
+- This will be a React & Redux app. 
+- It should work both on desktop and mobile devices
+- It should be fully responsive (up to Full HD resolution)
+- (optional) It should work as a PWA
 
-### `npm start`
+### 2. Get needed resources
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The only external resource I will use is the Flappy Bird spritesheet which I found somewhere in Google Images
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+![Flappy Bird Spritesheet](https://www.spriters-resource.com/download/59894/)
 
-### `npm test`
+I aim to cut that into separate files because I will use some of these graphics as a `background-image` with `background-repeat` property. 
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. Describe the basic logic behind the app
 
-### `npm run build`
+The end product preview:
+![Flappy Bird GIF](https://cdn-images-1.medium.com/max/1200/1*G-uGz8s2ti5rgVTz7AHU1w.gif)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Inside `App` component there will be two main components: one `Bird` and some number of `Pipe` components. There should also be a `gameLoop` function which should run in loop. On every frame `gameLoop` should check if `Bird` collided with any of the `Pipe` components. If a collision occurs, `gameLoop` should be stopped and the app should render a `Summary` component with achieved score and a button to play game once more. Should this button be clicked, the `gameLoop` will start again.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+`Pipe` components and background elements will be animated using CSS animations. `Bird` component will be interactive, so it will store variables needed to determine its position and movement and it will be rendered on every frame using CSS transform property.
