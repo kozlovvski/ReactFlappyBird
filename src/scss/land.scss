@@ -1,0 +1,21 @@
+#land {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url(images/land.png);
+  width: 100vw;
+  height: 20%;
+	background-repeat: repeat-x;
+	background-position: 0px 0px;
+  background-size: auto 100%;
+
+	animation: animateLand 9999s linear infinite;
+	// TODO: find a way to loop background pattern movement without hacking
+	// Problem: background position is calculated in relation to the element, not the background-image itself
+}
+
+@keyframes animateLand {
+  from { background-position: 0px 0px; }
+	to { background-position: calc(9999 * -50px) 0px; }
+	// 50px every 1 second
+}

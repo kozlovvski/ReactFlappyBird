@@ -1,0 +1,17 @@
+#background {
+  background-image: url(images/bg.png);
+  width: 100vw;
+  height: 100vh;
+  background-repeat: repeat-x;
+  background-size: auto 100vh;
+
+	animation: animateBackground 9999s linear infinite;
+	// TODO: find a way to loop background pattern movement without hacking
+	// Problem: background position is calculated in relation to the element, not the background-image itself
+}
+
+@keyframes animateBackground {
+  0% { background-position: 0px 0px; }
+  100% { background-position: calc(9999 * -10px) 0px; }
+  // 10px every 1 second
+}
