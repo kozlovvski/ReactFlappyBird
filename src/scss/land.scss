@@ -16,6 +16,6 @@
 
 @keyframes animateLand {
   from { background-position: 0px 0px; }
-	to { background-position: calc(9999 * -50px) 0px; }
-	// 50px every 1 second
+	to { background-position: calc(9999 * -10vw) 0px; }
+	// 10vw every 1 second
 }
