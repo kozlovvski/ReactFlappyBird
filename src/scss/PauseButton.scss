@@ -1,0 +1,20 @@
+.pause-button, .play-button {
+	$size: 5vh;
+	$ratio: 13/14;
+
+	position: absolute;
+	left: 1vh;
+	top: 1vh;
+  width: $size * $ratio;
+  height: $size;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.pause-button {
+	background-image: url(images/pause.png);
+}
+
+.play-button {
+	background-image: url(images/play.png);
+}

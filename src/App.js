@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Bird from "components/Bird";
+import PauseButton from "components/PauseButton";
 
 class App extends Component {
 	constructor(props) {
@@ -36,11 +37,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				{/* testing buttons, to be removed */}
-				<button onClick={() => this.props.dispatch({ type: "PAUSE_GAME" })}>Pause</button>
-				<button onClick={() => this.props.dispatch({ type: "RESUME_GAME" })}>Resume</button>
-				{/* end of testing buttons */}
-
+				<PauseButton />
 				<Bird ref={this.bird} />
 				<div id="land" />
 				<div id="background" />

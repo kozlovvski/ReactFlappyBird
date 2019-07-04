@@ -1,10 +1,12 @@
-@import 'scss/land';
-@import 'scss/background';
-@import 'scss/bird';
+@import 'scss/Land';
+@import 'scss/Background';
+@import 'scss/Bird';
+@import 'scss/PauseButton';
 
 * {
   margin: 0;
   padding: 0;
+  
 }
 
 #App {
