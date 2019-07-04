@@ -7,6 +7,8 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 
+
+
 		this.bird = React.createRef();
 	}
 
@@ -17,7 +19,7 @@ class App extends Component {
 			document.getElementById("background")
 		];
 
-		this.animationProp = window.requestAnimationFrame(() => this.gameLoop());
+    this.animationProp = window.requestAnimationFrame(() => this.gameLoop());
 	}
 
 	gameLoop() {
@@ -32,11 +34,15 @@ class App extends Component {
 
 	resumeAnimations() {
 		this.animatedElements.forEach(elem => (elem.style.animationPlayState = "running"));
-	}
+  }
+  
+  handleClick = () => {
+    this.bird.current.jump();
+  }
 
 	render() {
 		return (
-			<div id="App">
+			<div id="App" onClick={this.handleClick}>
 				<PauseButton />
 				<div id="game-area">
 					<Bird ref={this.bird} />

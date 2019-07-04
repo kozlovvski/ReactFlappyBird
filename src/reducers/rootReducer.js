@@ -5,7 +5,7 @@ const initialState = {
 	bird: {
 		height: 50,
 		velocity: 0,
-		gravity: 0,
+		gravity: 0.04,
 		rotation: 0
 	}
 };
@@ -13,7 +13,7 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case "UPDATE_BIRD":
-			return { ...state, bird: action.package };
+			return { ...state, bird: { ...state.bird, ...action.package } };
 		case "PAUSE_GAME": {
 			return { ...state, game: { ...state.game, isPaused: true } };
 		}

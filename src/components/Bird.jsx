@@ -4,20 +4,28 @@ import { connect } from "react-redux";
 class Bird extends Component {
 	update() {
 		if (!this.props.isPaused) {
+			const velocity = this.props.velocity - this.props.gravity;
+			const height = this.props.height + velocity;
 			const rotation = this.props.rotation + 1;
 			this.props.dispatch({
 				type: "UPDATE_BIRD",
-				package: { height: 0, velocity: 0, gravity: 0, rotation }
+				package: { height, velocity, rotation }
 			});
 		}
 	}
 
 	jump() {
+		const velocity = 1;
+		const rotation = -30;
 
+		this.props.dispatch({
+			type: "UPDATE_BIRD",
+			package: { velocity, rotation }
+		});
 	}
 
 	render() {
-		return <div id="bird" />;
+		return <div id="bird" style={{bottom: this.props.height + "%", transform: `rotate(${this.props.rotation}deg)`}} />;
 	}
 }
 
