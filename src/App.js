@@ -7,19 +7,11 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 
-
-
 		this.bird = React.createRef();
 	}
 
 	componentDidMount() {
-		this.animatedElements = [
-			document.getElementById("bird"),
-			document.getElementById("land"),
-			document.getElementById("background")
-		];
-
-    this.animationProp = window.requestAnimationFrame(() => this.gameLoop());
+		this.animationProp = window.requestAnimationFrame(() => this.gameLoop());
 	}
 
 	gameLoop() {
@@ -29,16 +21,20 @@ class App extends Component {
 	}
 
 	pauseAnimations() {
-		this.animatedElements.forEach(elem => (elem.style.animationPlayState = "paused"));
+		document
+			.querySelectorAll(".animated")
+			.forEach(elem => (elem.style.animationPlayState = "paused"));
 	}
 
 	resumeAnimations() {
-		this.animatedElements.forEach(elem => (elem.style.animationPlayState = "running"));
-  }
-  
-  handleClick = () => {
-    this.bird.current.jump();
-  }
+		document
+			.querySelectorAll(".animated")
+			.forEach(elem => (elem.style.animationPlayState = "running"));
+	}
+
+	handleClick = () => {
+		this.bird.current.jump();
+	};
 
 	render() {
 		return (
@@ -47,8 +43,8 @@ class App extends Component {
 				<div id="game-area">
 					<Bird ref={this.bird} />
 				</div>
-				<div id="land" />
-				<div id="background" />
+				<div id="land" className="animated" />
+				<div id="background" className="animated" />
 			</div>
 		);
 	}
