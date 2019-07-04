@@ -11,13 +11,13 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-    this.animatedElements = [
+		this.animatedElements = [
 			document.getElementById("bird"),
 			document.getElementById("land"),
 			document.getElementById("background")
-    ];
-    
-    this.animationProp = window.requestAnimationFrame(() => this.gameLoop());
+		];
+
+		this.animationProp = window.requestAnimationFrame(() => this.gameLoop());
 	}
 
 	gameLoop() {
@@ -36,9 +36,11 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="App">
+			<div id="App">
 				<PauseButton />
-				<Bird ref={this.bird} />
+				<div id="game-area">
+					<Bird ref={this.bird} />
+				</div>
 				<div id="land" />
 				<div id="background" />
 			</div>

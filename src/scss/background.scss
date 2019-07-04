@@ -1,7 +1,13 @@
 #background {
-  background-image: url(images/bg.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
   width: 100vw;
   height: 100vh;
+
+  background-image: url(images/bg.png);
   background-repeat: repeat-x;
   background-size: auto 100vh;
 
