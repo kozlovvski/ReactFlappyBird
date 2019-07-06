@@ -6,7 +6,8 @@ const initialState = {
 		height: 50,
 		velocity: 0,
 		gravity: 0.04,
-		rotation: 0
+		rotation: 0,
+		hoverDegree: 0
 	}
 };
 

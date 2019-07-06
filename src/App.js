@@ -24,8 +24,12 @@ class App extends Component {
 			case "title-screen":
 				break;
 
+			case "before-game":
+				this.bird.current.hover();
+				break;
+
 			case "playing":
-				this.resumeAnimations();
+				this.resumeAnimations(); // in case we were in "paused" state
 				this.bird.current.update();
 				break;
 
@@ -68,27 +72,11 @@ class App extends Component {
 		}
 	};
 
-	// render() {
-	// 	return (
-	// 		<div id="App" onClick={this.handleClick}>
-	// 			{this.props.game.state === "title-screen" && <TitleScreen />}
-	// 			{this.props.game.state === "before-game" && <HelpScreen />}
-	// 			<GameArea>
-	// 				<PauseButton />
-	// 				{this.props.game.state !== "title-screen" && <Bird ref={this.bird} />}
-	// 			</GameArea>
-	// 			<Land />
-	// 			<Background />
-	// 		</div>
-	// 	);
-	// }
-
 	render() {
 		return (
 			<div id="App" onClick={this.handleClick}>
 				{(() => {
 					switch (this.props.game.state) {
-						
 						case "title-screen":
 							return (
 								<React.Fragment>
