@@ -5,16 +5,16 @@ class PauseButton extends Component {
 
 	handleClick = e => {
 		if (e.target === document.querySelector(".play-button")) {
-			this.props.dispatch({ type: "RESUME_GAME" })
+			this.props.dispatch({ type: "CHANGE_GAME_STATE", gameState: "playing" })
 			e.stopPropagation();
 		} else {
-			this.props.dispatch({ type: "PAUSE_GAME" })
+			this.props.dispatch({ type: "CHANGE_GAME_STATE", gameState: "paused" })
 			e.stopPropagation();
 		}
 	}
 
 	render() {
-		return this.props.isPaused ? (
+		return this.props.game.state === "paused" ? (
 			<button className="play-button" onClick={this.handleClick}></button>
 		) : (
 			<button className="pause-button" onClick={this.handleClick}></button>
@@ -23,8 +23,7 @@ class PauseButton extends Component {
 }
 
 const mapStateToProps = state => {
-	const isPaused = state.game.isPaused;
-	return { isPaused };
+	return { game: state.game };
 };
 
 export default connect(mapStateToProps)(PauseButton);

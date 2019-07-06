@@ -3,15 +3,20 @@
 @import 'scss/Bird';
 @import 'scss/PauseButton';
 @import 'scss/GameArea';
+@import 'scss/TitleScreen';
 
 * {
   margin: 0;
-  padding: 0;
-  
+  padding: 0; 
+}
+
+body {
+  overflow: hidden;
 }
 
 #App {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 

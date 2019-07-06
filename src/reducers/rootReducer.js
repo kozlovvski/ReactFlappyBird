@@ -1,6 +1,6 @@
 const initialState = {
 	game: {
-		isPaused: false
+		state: "title-screen"
 	},
 	bird: {
 		height: 50,
@@ -14,11 +14,8 @@ const rootReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case "UPDATE_BIRD":
 			return { ...state, bird: { ...state.bird, ...action.package } };
-		case "PAUSE_GAME": {
-			return { ...state, game: { ...state.game, isPaused: true } };
-		}
-		case "RESUME_GAME": {
-			return { ...state, game: { ...state.game, isPaused: false } };
+		case "CHANGE_GAME_STATE": {
+			return { ...state, game: { ...state.game, state: action.gameState } };
 		}
 		default:
 			return state;
