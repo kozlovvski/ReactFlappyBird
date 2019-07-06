@@ -1,4 +1,4 @@
-#title-screen {
+#help-screen {
 	position: absolute;
 	left: 50%;
 	top: 20%;
@@ -10,20 +10,12 @@
 		image-rendering: pixelated;
 	}
 
-	.flappy-bird-title {
+	.get-ready {
 		height: 10vh;
 		margin-bottom: 10vh;
 	}
 
-	.flappy-bird-title-playbutton {
-		background: unset;
-		border: unset;
-		height: 7vh;
-		margin-top: 5vh;
-
-		img {
-			height: 100%;
-		}
+	.help {
+		height: 5vh * 49 / 12;
 	}
 }
-
