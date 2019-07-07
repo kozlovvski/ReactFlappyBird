@@ -75,49 +75,40 @@ class App extends Component {
 	render() {
 		return (
 			<div id="App" onClick={this.handleClick}>
-				{(() => {
-					switch (this.props.game.state) {
-						case "title-screen":
-							return (
-								<React.Fragment>
-									<TitleScreen />
-									<GameArea />
-								</React.Fragment>
-							);
-
-						case "before-game":
-							return (
-								<React.Fragment>
-									<HelpScreen />
-									<GameArea>
-										<Bird ref={this.bird} />
-									</GameArea>
-								</React.Fragment>
-							);
-
-						case "playing":
-							return (
-								<React.Fragment>
-									<PauseButton />
-									<GameArea>
-										<Bird ref={this.bird} />
-									</GameArea>
-								</React.Fragment>
-							);
-
-						case "paused":
-							return (
-								<React.Fragment>
-									<PauseButton />
-									<GameArea>
-										<Bird ref={this.bird} />
-									</GameArea>
-								</React.Fragment>
-							);
-						default:
-							break;
-					}
-				})()}
+				{
+					{
+						"title-screen": (
+							<>
+								<TitleScreen />
+								<GameArea />
+							</>
+						),
+						"before-game": (
+							<>
+								<HelpScreen />
+								<GameArea>
+									<Bird ref={this.bird} />
+								</GameArea>
+							</>
+						),
+						"playing": (
+							<>
+								<PauseButton />
+								<GameArea>
+									<Bird ref={this.bird} />
+								</GameArea>
+							</>
+						),
+						"paused": (
+							<>
+								<PauseButton />
+								<GameArea>
+									<Bird ref={this.bird} />
+								</GameArea>
+							</>
+						)
+					}[this.props.game.state]
+				}
 				<Land />
 				<Background />
 			</div>
