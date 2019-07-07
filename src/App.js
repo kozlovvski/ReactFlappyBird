@@ -9,6 +9,9 @@ import HelpScreen from "components/HelpScreen";
 import GameArea from "components/GameArea";
 import Pipes from "components/Pipes";
 
+import pauseAnimations from 'util/pauseAnimations'
+import resumeAnimations from 'util/resumeAnimations'
+
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -31,33 +34,24 @@ class App extends Component {
 				break;
 
 			case "playing":
-				this.resumeAnimations(); // in case we were in "paused" state
+				resumeAnimations(); // in case we were in "paused" state
 				this.bird.current.update();
 				this.pipes.current.update();
-				
+				this.checkIfPlayerDied();
 				break;
 
 			case "paused":
-				this.pauseAnimations();
+				pauseAnimations();
 				break;
 
 			default:
 				break;
 		}
-
 		this.animationProp = window.requestAnimationFrame(() => this.gameLoop());
 	}
 
-	pauseAnimations() {
-		document
-			.querySelectorAll(".animated")
-			.forEach(elem => (elem.style.animationPlayState = "paused"));
-	}
-
-	resumeAnimations() {
-		document
-			.querySelectorAll(".animated")
-			.forEach(elem => (elem.style.animationPlayState = "running"));
+	checkIfPlayerDied() {
+		
 	}
 
 	handleClick = () => {
