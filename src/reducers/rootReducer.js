@@ -8,6 +8,12 @@ const initialState = {
 		gravity: 0.04,
 		rotation: 0,
 		hoverDegree: 0
+	},
+	pipes: {
+		list: [],
+		interval: {to: 100, at: 0},
+		clearance: 20,
+		heightRange: {min: 50, max: 80}
 	}
 };
 
@@ -17,6 +23,12 @@ const rootReducer = (state = initialState, action) => {
 			return { ...state, bird: { ...state.bird, ...action.package } };
 		case "CHANGE_GAME_STATE": {
 			return { ...state, game: { ...state.game, state: action.gameState } };
+		}
+		case "ADD_PIPE": {
+			return { ...state, pipes: { ...state.pipes, list: [...state.pipes.list, action.package] }};
+		}
+		case "UPDATE_PIPE_INTERVAL": {
+			return { ...state, pipes: { ...state.pipes, interval: {...state.pipes.interval, at: action.at} }};
 		}
 		default:
 			return state;

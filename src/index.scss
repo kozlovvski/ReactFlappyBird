@@ -5,10 +5,12 @@
 @import 'scss/GameArea';
 @import 'scss/TitleScreen';
 @import 'scss/HelpScreen';
+@import 'scss/Pipes';
 
 * {
   margin: 0;
   padding: 0; 
+  user-select: none;
 }
 
 body {

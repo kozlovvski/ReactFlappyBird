@@ -6,7 +6,7 @@
 	background-repeat: repeat-x;
 	background-position: 0px 0px;
   background-size: auto 100%;
-  z-index: 0;
+  z-index: 1;
 
 	animation: animateLand 9999s linear infinite;
 	// TODO: find a way to loop background pattern movement without hacking
@@ -15,6 +15,6 @@
 
 @keyframes animateLand {
   from { background-position: 0px 0px; }
-	to { background-position: calc(9999 * -10vw) 0px; }
-	// 10vw every 1 second
+	to { background-position: 9999 * -20vh 0px; }
+	// -20vh every 1 second
 }

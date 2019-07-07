@@ -1,0 +1,29 @@
+#pipes {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh
+}
+
+.pipe-top,
+.pipe-bottom {
+	position: absolute;
+	left: 100vw;
+	height: 60vh;
+	z-index: -1;
+	// image-rendering: pixelated;
+
+	animation: animatePipe 100s linear;
+}
+
+@keyframes animatePipe {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(100 * -20vh);
+		// -20vh every 1 second
+	}
+}

@@ -7,12 +7,14 @@ import Background from "components/Background";
 import TitleScreen from "components/TitleScreen";
 import HelpScreen from "components/HelpScreen";
 import GameArea from "components/GameArea";
+import Pipes from "components/Pipes";
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 
 		this.bird = React.createRef();
+		this.pipes = React.createRef();
 	}
 
 	componentDidMount() {
@@ -31,6 +33,8 @@ class App extends Component {
 			case "playing":
 				this.resumeAnimations(); // in case we were in "paused" state
 				this.bird.current.update();
+				this.pipes.current.update();
+				
 				break;
 
 			case "paused":
@@ -96,6 +100,7 @@ class App extends Component {
 								<PauseButton />
 								<GameArea>
 									<Bird ref={this.bird} />
+									<Pipes ref={this.pipes} />
 								</GameArea>
 							</>
 						),
@@ -104,6 +109,7 @@ class App extends Component {
 								<PauseButton />
 								<GameArea>
 									<Bird ref={this.bird} />
+									<Pipes ref={this.pipes} />
 								</GameArea>
 							</>
 						)
