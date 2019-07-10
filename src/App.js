@@ -36,15 +36,11 @@ class App extends Component {
 
 			case "playing":
 				resumeAnimations(); // in case we were in "paused" state
-				console.log(this)
 				this.bird.current.update();
 				this.pipes.current.update();
 
 				if (playerDied()) {
-					console.log("player died");
-					console.log(this.pipes.current)
 					this.props.dispatch({ type: "CHANGE_GAME_STATE", gameState: "player-dead" });
-					console.log(this.pipes.current)
 				}
 				break;
 
