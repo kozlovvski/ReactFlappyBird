@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from "react-redux";
 import randomBetween from 'util/randomBetween';
 
-class Pipes extends Component {
+class Pipes extends PureComponent {
 	update() {
 		const interval = this.props.pipes.interval;
-		console.log(interval)
 		if (interval.at === interval.to) {
 			this.addPipe();
 			this.props.dispatch({type: "UPDATE_PIPE_INTERVAL", at: 0});
@@ -29,9 +28,9 @@ class Pipes extends Component {
 			<div id="pipes">
 				{this.props.pipes.list.map(pipe => {
 					return (
-						<div className="pipe" key={pipe.key}>
-							<img src={require("images/pipe_top.png")} style={{bottom: pipe.topPipeEnd + "%"}} alt="" className="pipe-top animated"/>
-							<img src={require("images/pipe_bottom.png")} style={{top: pipe.bottomPipeEnd + "%"}} alt="" className="pipe-bottom animated"/>
+						<div key={pipe.key}>
+							<img src={require("images/pipe_top.png")} style={{bottom: pipe.topPipeEnd + "%"}} alt="" className="pipe pipe-top animated"/>
+							<img src={require("images/pipe_bottom.png")} style={{top: pipe.bottomPipeEnd + "%"}} alt="" className="pipe pipe-bottom animated"/>
 						</div>
 					)
 				})}

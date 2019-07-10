@@ -5,7 +5,7 @@ class Bird extends Component {
 	update() {
 		const velocity = this.props.velocity - this.props.gravity;
 		const height = this.props.height + velocity;
-		const rotation = this.props.rotation + 1;
+		const rotation = this.props.rotation + 2;
 
 		this.props.dispatch({
 			type: "UPDATE_BIRD",
@@ -25,7 +25,7 @@ class Bird extends Component {
 	}
 
 	jump() {
-		const velocity = 1;
+		const velocity = 0.9;
 		const rotation = -30;
 
 		this.props.dispatch({

@@ -15,6 +15,5 @@
 
 @keyframes animateLand {
   from { background-position: 0px 0px; }
-	to { background-position: 9999 * -20vh 0px; }
-	// -20vh every 1 second
+	to { background-position: 9999 * $game-speed * -1vh 0px; }
 }

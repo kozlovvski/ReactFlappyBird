@@ -5,13 +5,13 @@ const initialState = {
 	bird: {
 		height: 50,
 		velocity: 0,
-		gravity: 0.04,
+		gravity: 0.05,
 		rotation: 0,
 		hoverDegree: 0
 	},
 	pipes: {
 		list: [],
-		interval: {to: 100, at: 0},
+		interval: {to: 100, at: 100},
 		clearance: 20,
 		heightRange: {min: 50, max: 80}
 	}

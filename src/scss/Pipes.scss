@@ -23,7 +23,6 @@
 		transform: translateX(0);
 	}
 	to {
-		transform: translateX(100 * -20vh);
-		// -20vh every 1 second
+		transform: translateX(100 * $game-speed * -1vh);
 	}
 }

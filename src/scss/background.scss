@@ -18,6 +18,5 @@
 
 @keyframes animateBackground {
   0% { background-position: 0px 0px; }
-  100% { background-position: calc(9999 * -4vh) 0px; }
-  // 4vh every second
+  100% { background-position: 9999 * $game-speed * -0.25vh 0px; }
 }
