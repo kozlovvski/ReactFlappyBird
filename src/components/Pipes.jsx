@@ -14,7 +14,7 @@ class Pipes extends PureComponent {
 	}
 
 	addPipe() {
-		const heightRange = this.props.pipes.heightRange;
+		const heightRange = this.props.pipes.heightRange; 
 		const randomHeight = randomBetween(heightRange.min, heightRange.max);
 
 		const topPipeEnd = randomHeight;
@@ -25,16 +25,16 @@ class Pipes extends PureComponent {
 
 	render() {
 		return (
-			<div id="pipes">
+			<>
 				{this.props.pipes.list.map(pipe => {
 					return (
-						<div key={pipe.key}>
-							<img src={require("images/pipe_top.png")} style={{bottom: pipe.topPipeEnd + "%"}} alt="" className="pipe pipe-top animated"/>
-							<img src={require("images/pipe_bottom.png")} style={{top: pipe.bottomPipeEnd + "%"}} alt="" className="pipe pipe-bottom animated"/>
+						<div className="pipe-container animated" key={pipe.key}>
+							<img src={require("images/pipe_top.png")} style={{bottom: pipe.topPipeEnd + "%"}} alt="" className="pipe pipe-top"/>
+							<img src={require("images/pipe_bottom.png")} style={{top: pipe.bottomPipeEnd + "%"}} alt="" className="pipe pipe-bottom"/>
 						</div>
 					)
 				})}
-			</div>
+			</>
 		)
 	}
 }
