@@ -13,6 +13,7 @@ $game-speed: 30;
 @import 'scss/HelpScreen';
 @import 'scss/Pipes';
 @import 'scss/Score';
+@import 'scss/SummaryScreen';
 
 * {
   margin: 0;
@@ -27,6 +28,7 @@ body {
 #App {
   width: 100vw;
   height: 100vh;
+  position: relative;
   overflow: hidden;
 }
 

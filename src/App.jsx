@@ -13,6 +13,7 @@ import pauseAnimations from "util/pauseAnimations";
 import resumeAnimations from "util/resumeAnimations";
 import playerDied from "util/playerDied";
 import Score from "components/Score";
+import SummaryScreen from "components/SummaryScreen";
 
 class App extends Component {
 	constructor(props) {
@@ -34,6 +35,7 @@ class App extends Component {
 				break;
 
 			case "before-game":
+				resumeAnimations(); // in case we were in "player-dead" state
 				this.bird.current.hover();
 				break;
 
@@ -136,6 +138,7 @@ class App extends Component {
 			<div id="App" onClick={this.handleClick}>
 				<TitleScreen />
 				<HelpScreen />
+				<SummaryScreen />
 				
 				{(gameState === "playing" || gameState === "paused") && <PauseButton />}
 				{(gameState === "playing" || gameState === "paused") && <Score ref={this.score}/>}

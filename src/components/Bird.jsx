@@ -25,7 +25,7 @@ class Bird extends Component {
 	}
 
 	jump() {
-		const velocity = 0.9;
+		const velocity = 1.2;
 		const rotation = -30;
 
 		this.props.dispatch({

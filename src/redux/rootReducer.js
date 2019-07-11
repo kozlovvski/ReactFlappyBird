@@ -5,7 +5,7 @@ const initialState = {
 	bird: {
 		height: 42,
 		velocity: 0,
-		gravity: 0.05,
+		gravity: 0.06,
 		rotation: 0,
 		hoverDegree: 0
 	},
@@ -39,6 +39,9 @@ const rootReducer = (state = initialState, action) => {
 		}
 		case "UPDATE_SCORE": {
 			return { ...state, score: { ...state.score, ...action.package}};
+		}
+		case "RESET_GAME": {
+			return { ...state, ...initialState, score: { ...initialState.score, highest: state.score.highest}};
 		}
 		default:
 			return state;
