@@ -1,6 +1,7 @@
 {
   "name": "flappy-bird",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "homepage": "http://kozlovvski.github.io/ReactFlappyBird",
   "private": true,
   "dependencies": {
     "@welldone-software/why-did-you-render": "^3.2.1",
