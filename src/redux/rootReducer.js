@@ -3,7 +3,7 @@ const initialState = {
 		state: ""
 	},
 	bird: {
-		height: 50,
+		height: 42,
 		velocity: 0,
 		gravity: 0.05,
 		rotation: 0,
@@ -11,9 +11,9 @@ const initialState = {
 	},
 	pipes: {
 		list: [],
-		interval: {to: 100, at: 100},
+		interval: {to: 80, at: 80},
 		clearance: 20,
-		heightRange: {min: 50, max: 80}
+		heightRange: {min: 55, max: 85}
 	},
 	score: {
 		current: 0,

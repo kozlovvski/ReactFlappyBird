@@ -35,7 +35,7 @@ class Bird extends Component {
 	}
 
 	fallToTheGround() {
-		if (this.props.height > 20) {
+		if (this.props.height > 0) {
 			const velocity = this.props.velocity - this.props.gravity;
 			const height = this.props.height + velocity;
 			const rotation = this.props.rotation + 2;
