@@ -1,7 +1,9 @@
 .pipe-container {
 	position: absolute;
 	left: 100vw;
+	top: 0;
 	height: 100vh;
+	width: 9.75vh; // end where children end
 	z-index: -1;
 	// image-rendering: pixelated;
 

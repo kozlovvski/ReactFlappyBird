@@ -27,6 +27,9 @@ const rootReducer = (state = initialState, action) => {
 		case "ADD_PIPE": {
 			return { ...state, pipes: { ...state.pipes, list: [...state.pipes.list, action.package] }};
 		}
+		case "REMOVE_PIPE": {
+			return { ...state, pipes: { ...state.pipes, list: action.newPipeList }};
+		}
 		case "UPDATE_PIPE_INTERVAL": {
 			return { ...state, pipes: { ...state.pipes, interval: {...state.pipes.interval, at: action.at} }};
 		}

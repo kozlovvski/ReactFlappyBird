@@ -39,6 +39,7 @@ class App extends Component {
 				resumeAnimations(); // in case we were in "paused" state
 				this.bird.current.update();
 				this.pipes.current.update();
+				this.pipes.current.removeOffscreenPipes();
 
 				if (playerDied()) {
 					this.props.dispatch({ type: "CHANGE_GAME_STATE", gameState: "player-dead" });
