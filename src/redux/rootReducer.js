@@ -14,6 +14,10 @@ const initialState = {
 		interval: {to: 100, at: 100},
 		clearance: 20,
 		heightRange: {min: 50, max: 80}
+	},
+	score: {
+		current: 0,
+		highest: 0
 	}
 };
 
@@ -32,6 +36,9 @@ const rootReducer = (state = initialState, action) => {
 		}
 		case "UPDATE_PIPE_INTERVAL": {
 			return { ...state, pipes: { ...state.pipes, interval: {...state.pipes.interval, at: action.at} }};
+		}
+		case "UPDATE_SCORE": {
+			return { ...state, score: { ...state.score, ...action.package}};
 		}
 		default:
 			return state;

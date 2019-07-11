@@ -12,6 +12,7 @@ import Pipes from "components/Pipes";
 import pauseAnimations from "util/pauseAnimations";
 import resumeAnimations from "util/resumeAnimations";
 import playerDied from "util/playerDied";
+import Score from "components/Score";
 
 class App extends Component {
 	constructor(props) {
@@ -19,6 +20,7 @@ class App extends Component {
 
 		this.bird = React.createRef();
 		this.pipes = React.createRef();
+		this.score = React.createRef();
 	}
 
 	componentDidMount() {
@@ -40,6 +42,8 @@ class App extends Component {
 				this.bird.current.update();
 				this.pipes.current.update();
 				this.pipes.current.removeOffscreenPipes();
+
+				this.score.current.update();
 
 				if (playerDied()) {
 					this.props.dispatch({ type: "CHANGE_GAME_STATE", gameState: "player-dead" });
@@ -132,6 +136,7 @@ class App extends Component {
 			<div id="App" onClick={this.handleClick}>
 				<TitleScreen />
 				<HelpScreen />
+				<Score ref={this.score}/>
 				{(gameState === "playing" || gameState === "paused") && <PauseButton />}
 				<GameArea>
 					{gameState !== "title-screen" && <Bird ref={this.bird} />}
