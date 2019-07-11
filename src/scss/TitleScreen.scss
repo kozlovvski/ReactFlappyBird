@@ -1,4 +1,4 @@
-#title-screen {
+.title-screen {
 	position: absolute;
 	left: 50%;
 	top: 20%;
@@ -25,6 +25,38 @@
 
 		img {
 			height: 100%;
+		}
+	}
+
+	// CSS Transition
+
+	opacity: 0;
+
+	&-enter {
+		opacity: 0;
+		transform: translate(-50%, 2vh);
+
+		&-active {
+			opacity: 1;
+			transform: translate(-50%, 0);
+			transition: opacity 500ms, transform 500ms;
+		}
+
+		&-done {
+			opacity: 1;
+		}
+	}
+
+	&-exit {
+		opacity: 1;
+
+		&-active {
+			opacity: 0;
+		}
+
+		&-done {
+			opacity: 0;
+			display: none;
 		}
 	}
 }

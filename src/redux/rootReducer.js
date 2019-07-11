@@ -1,6 +1,6 @@
 const initialState = {
 	game: {
-		state: "title-screen"
+		state: ""
 	},
 	bird: {
 		height: 50,

@@ -22,6 +22,7 @@ class App extends Component {
 	}
 
 	componentDidMount() {
+		this.props.dispatch({ type: "CHANGE_GAME_STATE", gameState: "title-screen" });
 		this.animationProp = window.requestAnimationFrame(() => this.gameLoop());
 	}
 
@@ -127,7 +128,7 @@ class App extends Component {
 			// 	<Background />
 			// </div>
 			<div id="App" onClick={this.handleClick}>
-				{gameState === "title-screen" && <TitleScreen />}
+				<TitleScreen />
 				<HelpScreen />
 				{(gameState === "playing" || gameState === "paused") && <PauseButton />}
 				<GameArea>

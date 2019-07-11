@@ -38,7 +38,7 @@ class Bird extends Component {
 		return (
 			<div
 				id="bird"
-				className="animated"
+				className="bird animated"
 				style={{ bottom: this.props.height + "%", transform: `rotate(${this.props.rotation}deg)` }}
 			/>
 		);
