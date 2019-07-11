@@ -15,9 +15,14 @@ class Score extends PureComponent {
 	}
 
 	render() {
+		const scoreArray = this.props.score.current.toString().split("");
 		return (
-			<div>
-				{this.props.score.current}
+			<div className="score">
+				{scoreArray.map(scoreNumber => {
+					return (
+						<img src={require(`images/large-numbers/${scoreNumber}.png`)} alt="" className="score-number" />
+					)
+				})}
 			</div>
 		)
 	}

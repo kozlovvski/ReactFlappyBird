@@ -1,0 +1,13 @@
+.score {
+	position: absolute;
+	top: 10vh;
+	left: 50%;
+	transform: translate(-50%, 0);
+	height: 5vh;
+
+	&-number {
+		height: 100%;
+		image-rendering: pixelated;
+		margin: 0 0.2vh;
+	}
+}

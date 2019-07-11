@@ -136,8 +136,9 @@ class App extends Component {
 			<div id="App" onClick={this.handleClick}>
 				<TitleScreen />
 				<HelpScreen />
-				<Score ref={this.score}/>
+				
 				{(gameState === "playing" || gameState === "paused") && <PauseButton />}
+				{(gameState === "playing" || gameState === "paused") && <Score ref={this.score}/>}
 				<GameArea>
 					{gameState !== "title-screen" && <Bird ref={this.bird} />}
 					{gameState !== "title-screen" && <Pipes ref={this.pipes} />}
