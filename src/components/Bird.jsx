@@ -17,7 +17,7 @@ class Bird extends Component {
 		const hoverDegree = this.props.hoverDegree + 0.1;
 		const delta = Math.sin(hoverDegree) / 5; // returns values from -0.2 to 0.2
 		const height = this.props.height + delta;
-		
+
 		this.props.dispatch({
 			type: "UPDATE_BIRD",
 			package: { height, hoverDegree }
@@ -32,6 +32,19 @@ class Bird extends Component {
 			type: "UPDATE_BIRD",
 			package: { velocity, rotation }
 		});
+	}
+
+	fallToTheGround() {
+		if (this.props.height > 20) {
+			const velocity = this.props.velocity - this.props.gravity;
+			const height = this.props.height + velocity;
+			const rotation = this.props.rotation + 2;
+
+			this.props.dispatch({
+				type: "UPDATE_BIRD",
+				package: { height, velocity, rotation }
+			});
+		}
 	}
 
 	render() {

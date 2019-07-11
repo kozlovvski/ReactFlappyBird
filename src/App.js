@@ -51,6 +51,7 @@ class App extends Component {
 
 			case "player-dead":
 				pauseAnimations();
+				this.bird.current.fallToTheGround();
 				break;
 
 			default:
