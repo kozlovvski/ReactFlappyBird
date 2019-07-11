@@ -48,10 +48,10 @@
 	}
 
 	&-exit {
-		opacity: 1;
+		display: none;
 
 		&-active {
-			opacity: 0;
+			display: none;
 		}
 
 		&-done {
