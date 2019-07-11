@@ -1,4 +1,4 @@
-#help-screen {
+.help-screen {
 	position: absolute;
 	left: 50%;
 	top: 20%;
@@ -17,5 +17,35 @@
 
 	.help {
 		height: 5vh * 49 / 12;
+	}
+
+	// CSS Transition
+
+	opacity: 0;
+
+	&-enter {
+		opacity: 0;
+
+		&-active {
+			opacity: 1;
+			transition: opacity 500ms
+		}
+
+		&-done {
+			opacity: 1;
+		}
+	}
+
+	&-exit {
+		opacity: 1;
+
+		&-active {
+			opacity: 0;
+			transition: opacity 500ms
+		}
+
+		&-done {
+			opacity: 0;
+		}
 	}
 }

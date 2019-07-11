@@ -128,7 +128,7 @@ class App extends Component {
 			// </div>
 			<div id="App" onClick={this.handleClick}>
 				{gameState === "title-screen" && <TitleScreen />}
-				{gameState === "before-game" && <HelpScreen />}
+				<HelpScreen />
 				{(gameState === "playing" || gameState === "paused") && <PauseButton />}
 				<GameArea>
 					{gameState !== "title-screen" && <Bird ref={this.bird} />}
