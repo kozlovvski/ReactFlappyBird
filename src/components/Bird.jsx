@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 
-class Bird extends Component {
+class Bird extends PureComponent {
 	update() {
 		const velocity = this.props.velocity - this.props.gravity;
 		const height = this.props.height + velocity;

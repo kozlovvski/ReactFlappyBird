@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { connect } from "react-redux";
 import randomBetween from 'util/randomBetween';
 
-class Pipes extends PureComponent {
+class Pipes extends Component {
 	update() {
 		const interval = this.props.pipes.interval;
 		if (interval.at === interval.to) {
@@ -33,6 +33,10 @@ class Pipes extends PureComponent {
 				this.props.dispatch({type: "REMOVE_PIPE", newPipeList});
 			}
 		});
+	}
+
+	shouldComponentUpdate(nextProps) {
+		return this.props.pipes.list.length !== nextProps.pipes.list.length
 	}
 
 	render() {

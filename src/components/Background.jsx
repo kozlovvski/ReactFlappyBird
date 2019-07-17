@@ -1,9 +1,7 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 
-export default class Background extends PureComponent {
-	render() {
-		return (
-			<div id="background" className="animated" />
-		)
-	}
+export default function Background() {
+	return (
+		<div id="background" className="animated" />
+	)
 }

@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 
-class PauseButton extends Component {
-
+class PauseButton extends PureComponent {
 	handleClick = e => {
 		if (e.target === document.querySelector(".play-button")) {
 			this.props.dispatch({ type: "CHANGE_GAME_STATE", gameState: "playing" })

@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { connect } from "react-redux";
 
-class TitleScreen extends Component {
+class TitleScreen extends PureComponent {
 	handleClick = () => {
 		this.props.dispatch({ type: "CHANGE_GAME_STATE", gameState: "before-game" });
 	};

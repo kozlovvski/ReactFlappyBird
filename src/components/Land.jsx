@@ -1,9 +1,8 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 
-export default class Land extends PureComponent {
-	render() {
-		return (
-			<div id="land" className="animated" />
-		)
-	}
+export default function Land() {
+	return (
+		<div id="land" className="animated" />
+	)
 }
+
