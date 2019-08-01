@@ -22,6 +22,7 @@ class SummaryScreen extends PureComponent {
 					<div className="result-board">
 						<ScoreSmall type="current" />
 						<ScoreSmall type="highest" />
+						{this.props.score.isRecord && <img className="new-record" src={require("images/new_record.png")} alt="" />}
 						<img className="result-board-background" src={require("images/result_board.png")} alt=""/>
 					</div>
 					<button className="summary-screen-playbutton" onClick={this.handleClick}>

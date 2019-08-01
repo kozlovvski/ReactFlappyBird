@@ -17,7 +17,8 @@ const initialState = {
 	},
 	score: {
 		current: 0,
-		highest: 0
+		highest: 0,
+		isRecord: false
 	}
 };
 
@@ -38,10 +39,14 @@ const rootReducer = (state = initialState, action) => {
 			return { ...state, pipes: { ...state.pipes, interval: {...state.pipes.interval, at: action.at} }};
 		}
 		case "UPDATE_SCORE": {
-			return { ...state, score: { ...state.score, ...action.package}};
+			// check if player made a new record
+			const isRecord = action.package.current > state.score.highest;
+
+			const highest = Math.max(action.package.current, state.score.highest);
+			return { ...state, score: { ...state.score, ...action.package, highest, isRecord}};
 		}
 		case "RESET_GAME": {
-			return { ...state, ...initialState, score: { ...initialState.score, highest: state.score.highest}};
+			return { ...state, ...initialState, score: { current: 0, highest: state.score.highest}};
 		}
 		default:
 			return state;

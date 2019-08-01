@@ -14,6 +14,7 @@ import resumeAnimations from "util/resumeAnimations";
 import playerDied from "util/playerDied";
 import Score from "components/Score";
 import SummaryScreen from "components/SummaryScreen";
+import updateScore from "util/updateScore";
 
 class App extends Component {
 	constructor(props) {
@@ -21,7 +22,6 @@ class App extends Component {
 
 		this.bird = React.createRef();
 		this.pipes = React.createRef();
-		this.score = React.createRef();
 	}
 
 	componentDidMount() {
@@ -41,11 +41,11 @@ class App extends Component {
 
 			case "playing":
 				resumeAnimations(); // in case we were in "paused" state
+				updateScore();
 				this.bird.current.update();
 				this.pipes.current.update();
 				this.pipes.current.removeOffscreenPipes();
 
-				this.score.current.update();
 
 				if (playerDied()) {
 					this.props.dispatch({ type: "CHANGE_GAME_STATE", gameState: "player-dead" });
