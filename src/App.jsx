@@ -86,55 +86,6 @@ class App extends Component {
 	render() {
 		const gameState = this.props.game.state;
 		return (
-			// <div id="App" onClick={this.handleClick}>
-			// 	{
-			// 		{
-			// 			"title-screen": (
-			// 				<>
-			// 					<TitleScreen />
-			// 					<GameArea />
-			// 				</>
-			// 			),
-			// 			"before-game": (
-			// 				<>
-			// 					<HelpScreen />
-			// 					<GameArea>
-			// 						<Bird ref={this.bird} />
-			// 					</GameArea>
-			// 				</>
-			// 			),
-			// 			playing: (
-			// 				<>
-			// 					<PauseButton />
-			// 					<GameArea>
-			// 						<Bird ref={this.bird} />
-			// 						<Pipes ref={this.pipes} />
-			// 					</GameArea>
-			// 				</>
-			// 			),
-			// 			paused: (
-			// 				<>
-			// 					<PauseButton />
-			// 					<GameArea>
-			// 						<Bird ref={this.bird} />
-			// 						<Pipes ref={this.pipes} />
-			// 					</GameArea>
-			// 				</>
-			// 			),
-			// 			"player-dead": (
-			// 				<>
-			// 				<PauseButton />
-			// 					<GameArea>
-			// 						<Bird ref={this.bird} />
-			// 						<Pipes ref={this.pipes} />
-			// 					</GameArea>
-			// 				</>
-			// 			)
-			// 		}[this.props.game.state]
-			// 	}
-			// 	<Land />
-			// 	<Background />
-			// </div>
 			<div id="App" onClick={this.handleClick}>
 				<TitleScreen />
 				<HelpScreen />

@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { connect } from "react-redux";
 
+import ScoreSmall from './ScoreSmall';
+
 class SummaryScreen extends PureComponent {
 	handleClick = () => {
 		this.props.dispatch({ type: "RESET_GAME" });
@@ -18,6 +20,8 @@ class SummaryScreen extends PureComponent {
 				<div className="summary-screen">
 					<img className="game-over" src={require("images/game_over.png")} alt="" />
 					<div className="result-board">
+						<ScoreSmall type="current" />
+						<ScoreSmall type="highest" />
 						<img className="result-board-background" src={require("images/result_board.png")} alt=""/>
 					</div>
 					<button className="summary-screen-playbutton" onClick={this.handleClick}>
