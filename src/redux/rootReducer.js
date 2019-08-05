@@ -19,7 +19,8 @@ const initialState = {
 		current: 0,
 		highest: 0,
 		isRecord: false
-	}
+	},
+	debug: false
 };
 
 const rootReducer = (state = initialState, action) => {

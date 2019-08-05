@@ -47,6 +47,10 @@ class Bird extends PureComponent {
 		}
 	}
 
+	componentDidUpdate() {
+		if(this.props.debug) console.log("Bird updated");
+	}
+
 	render() {
 		return (
 			<div
@@ -59,7 +63,7 @@ class Bird extends PureComponent {
 }
 
 const mapStateToProps = state => {
-	return { ...state.bird };
+	return { ...state.bird, debug: state.debug };
 };
 
 export default connect(

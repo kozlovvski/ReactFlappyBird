@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from "react-redux";
 
 function Score(props) {
+	if(props.debug) console.log("Score updated");
 	const scoreArray = props.score.current.toString().split("");
 		return (
 			<div className="score">
@@ -15,7 +16,7 @@ function Score(props) {
 }
 
 const mapStateToProps = state => {
-	return { score: state.score };
+	return { score: state.score, debug: state.debug };
 };
 
 export default connect(

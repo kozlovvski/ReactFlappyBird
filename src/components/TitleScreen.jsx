@@ -7,6 +7,10 @@ class TitleScreen extends PureComponent {
 		this.props.dispatch({ type: "CHANGE_GAME_STATE", gameState: "before-game" });
 	};
 
+	componentDidUpdate() {
+		if(this.props.debug) console.log("TitleScreen updated");
+	}
+
 	render() {
 		return (
 			<CSSTransition
@@ -27,7 +31,7 @@ class TitleScreen extends PureComponent {
 }
 
 const mapStateToProps = state => {
-	return { game: state.game };
+	return { game: state.game, debug: state.debug };
 };
 
 export default connect(mapStateToProps)(TitleScreen);

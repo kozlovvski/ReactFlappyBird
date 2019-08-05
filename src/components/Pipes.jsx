@@ -39,6 +39,10 @@ class Pipes extends Component {
 		return this.props.pipes.list.length !== nextProps.pipes.list.length
 	}
 
+	componentDidUpdate() {
+		if(this.props.debug) console.log("Pipes updated");
+	}
+
 	render() {
 		return (
 			<>
@@ -56,7 +60,7 @@ class Pipes extends Component {
 }
 
 const mapStateToProps = state => {
-	return { pipes: state.pipes };
+	return { pipes: state.pipes, debug: state.debug };
 };
 
 export default connect(

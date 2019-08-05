@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { CSSTransition } from 'react-transition-group'
 
 function HelpScreen(props) {
+	if(props.debug) console.log("HelpScreen updated");
 	return (
 		<CSSTransition in={props.game.state === "before-game"} classNames="help-screen" timeout={500}>
 			<div className="help-screen">
@@ -14,7 +15,7 @@ function HelpScreen(props) {
 }
 
 const mapStateToProps = state => {
-	return { game: state.game };
+	return { game: state.game, debug: state.debug };
 };
 
 export default connect(mapStateToProps)(HelpScreen);

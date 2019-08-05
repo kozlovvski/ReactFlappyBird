@@ -10,6 +10,10 @@ class SummaryScreen extends PureComponent {
 		this.props.dispatch({ type: "CHANGE_GAME_STATE", gameState: "before-game" });
 	};
 
+	componentDidUpdate() {
+		if(this.props.debug) console.log("SummaryScreen updated");
+	}
+
 	render() {
 		return (
 			<CSSTransition
@@ -35,7 +39,7 @@ class SummaryScreen extends PureComponent {
 }
 
 const mapStateToProps = state => {
-	return { game: state.game, score: state.score };
+	return { game: state.game, score: state.score, debug: state.debug };
 };
 
 export default connect(mapStateToProps)(SummaryScreen);

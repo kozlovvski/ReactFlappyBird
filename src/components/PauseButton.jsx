@@ -12,6 +12,10 @@ class PauseButton extends PureComponent {
 		}
 	}
 
+	componentDidUpdate() {
+		if(this.props.debug) console.log("PauseButton updated");
+	}
+
 	render() {
 		return this.props.game.state === "paused" ? (
 			<button className="play-button" onClick={this.handleClick}></button>
@@ -22,7 +26,7 @@ class PauseButton extends PureComponent {
 }
 
 const mapStateToProps = state => {
-	return { game: state.game };
+	return { game: state.game, debug: state.debug };
 };
 
 export default connect(mapStateToProps)(PauseButton);
