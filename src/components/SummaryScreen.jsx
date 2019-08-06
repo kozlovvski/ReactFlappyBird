@@ -29,7 +29,7 @@ class SummaryScreen extends PureComponent {
 						{this.props.score.isRecord && <img className="new-record" src={require("images/new_record.png")} alt="" />}
 						<img className="result-board-background" src={require("images/result_board.png")} alt=""/>
 					</div>
-					<button className="summary-screen-playbutton" onClick={this.handleClick}>
+					<button className="summary-screen-playbutton" aria-label="Press to play again" onClick={this.handleClick}>
 						<img src={require("images/flappy_bird_title_playbutton.png")} alt="" />
 					</button>
 				</div>

@@ -18,9 +18,9 @@ class PauseButton extends PureComponent {
 
 	render() {
 		return this.props.game.state === "paused" ? (
-			<button className="play-button" onClick={this.handleClick}></button>
+			<button className="play-button" onClick={this.handleClick} aria-label="Press to resume game"></button>
 		) : (
-			<button className="pause-button" onClick={this.handleClick}></button>
+			<button className="pause-button" onClick={this.handleClick} aria-label="Press to pause game"></button>
 		);	
 	}
 }

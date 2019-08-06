@@ -21,7 +21,7 @@ class TitleScreen extends PureComponent {
 				<div className="title-screen">
 					<img className="flappy-bird-title" src={require("images/flappy_bird_title.png")} alt="" />
 					<div className="bird title-bird animated" /> {/* inside scss/Bird.scss */}
-					<button className="flappy-bird-title-playbutton" onClick={this.handleClick}>
+					<button className="flappy-bird-title-playbutton" aria-label="Press to play" onClick={this.handleClick}>
 						<img src={require("images/flappy_bird_title_playbutton.png")} alt="" />
 					</button>
 				</div>
