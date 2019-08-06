@@ -1,27 +1,31 @@
-const initialState = {
-	game: {
-		state: ""
-	},
-	bird: {
-		height: 42,
-		velocity: 0,
-		gravity: 0.06,
-		rotation: 0,
-		hoverDegree: 0
-	},
-	pipes: {
-		list: [],
-		interval: {to: 80, at: 80},
-		clearance: 20,
-		heightRange: {min: 55, max: 85}
-	},
-	score: {
-		current: 0,
-		highest: 0,
-		isRecord: false
-	},
-	debug: false
+import Cookie from 'js-cookie';
+
+let initialState = {
+		game: {
+			state: ""
+		},
+		bird: {
+			height: 42,
+			velocity: 0,
+			gravity: 0.06,
+			rotation: 0,
+			hoverDegree: 0
+		},
+		pipes: {
+			list: [],
+			interval: {to: 80, at: 80},
+			clearance: 20,
+			heightRange: {min: 55, max: 85}
+		},
+		score: {
+			current: 0,
+			highest: 0,
+			isRecord: false
+		},
+		debug: false
 };
+
+if (Cookie.get('highest-score')) initialState.score.highest = Cookie.get('highest-score');
 
 const rootReducer = (state = initialState, action) => {
 	switch (action.type) {
@@ -42,6 +46,11 @@ const rootReducer = (state = initialState, action) => {
 		case "UPDATE_SCORE": {
 			// check if player made a new record
 			const isRecord = action.package.current > state.score.highest;
+
+			if (isRecord) {
+				Cookie.remove("highest-score");
+				Cookie.set('highest-score', action.package.current);
+			}
 
 			const highest = Math.max(action.package.current, state.score.highest);
 			return { ...state, score: { ...state.score, ...action.package, highest, isRecord}};
