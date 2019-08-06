@@ -4,7 +4,15 @@ import { connect } from "react-redux";
 class Bird extends PureComponent {
 	update() {
 		const velocity = this.props.velocity - this.props.gravity;
-		const height = this.props.height + velocity;
+
+		// prevent bird from exiting the screen
+		let height;
+		if (this.props.velocity > 0 && this.props.height > 95) {
+			height = this.props.height;
+		} else {
+			height = this.props.height + this.props.velocity;
+		}
+
 		const rotation = this.props.rotation + 2;
 
 		this.props.dispatch({
