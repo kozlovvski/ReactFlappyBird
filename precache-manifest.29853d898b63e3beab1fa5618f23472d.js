@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c6079cda9de831859377dc5beff305f0",
+    "revision": "b2319bd561b892b10f4283777e5e0e80",
     "url": "/ReactFlappyBird/index.html"
   },
   {
-    "revision": "9a1bef6bbbdd4318f09b",
+    "revision": "9fe86ef6c25706ea06e3",
     "url": "/ReactFlappyBird/static/css/main.71515910.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ReactFlappyBird/static/js/2.ef20e8f0.chunk.js"
   },
   {
-    "revision": "9a1bef6bbbdd4318f09b",
-    "url": "/ReactFlappyBird/static/js/main.e19e43a8.chunk.js"
+    "revision": "9fe86ef6c25706ea06e3",
+    "url": "/ReactFlappyBird/static/js/main.36748e8d.chunk.js"
   },
   {
     "revision": "0a2fd5b685a8d6ac9ccf",
