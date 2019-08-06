@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ReactFlappyBird/static/css/main.71515910.chunk.css",
-    "main.js": "/ReactFlappyBird/static/js/main.36748e8d.chunk.js",
-    "main.js.map": "/ReactFlappyBird/static/js/main.36748e8d.chunk.js.map",
+    "main.js": "/ReactFlappyBird/static/js/main.7a7a4d0a.chunk.js",
+    "main.js.map": "/ReactFlappyBird/static/js/main.7a7a4d0a.chunk.js.map",
     "runtime~main.js": "/ReactFlappyBird/static/js/runtime~main.cfc1afe8.js",
     "runtime~main.js.map": "/ReactFlappyBird/static/js/runtime~main.cfc1afe8.js.map",
     "static/js/2.ef20e8f0.chunk.js": "/ReactFlappyBird/static/js/2.ef20e8f0.chunk.js",
     "static/js/2.ef20e8f0.chunk.js.map": "/ReactFlappyBird/static/js/2.ef20e8f0.chunk.js.map",
     "index.html": "/ReactFlappyBird/index.html",
-    "precache-manifest.ea8d24b270e3d6498f2678bd8da0aee2.js": "/ReactFlappyBird/precache-manifest.ea8d24b270e3d6498f2678bd8da0aee2.js",
+    "precache-manifest.523c66381cce4fa44999d652ee11c1a2.js": "/ReactFlappyBird/precache-manifest.523c66381cce4fa44999d652ee11c1a2.js",
     "service-worker.js": "/ReactFlappyBird/service-worker.js",
     "static/css/main.71515910.chunk.css.map": "/ReactFlappyBird/static/css/main.71515910.chunk.css.map"
   }
