@@ -1,26 +1,57 @@
-This project aims to recreate a popular Flappy Bird game in React & Redux.
-## How will I do that
+# ReactFlappy Bird
 
-### 1. Describe the project
+This project is a React & Redux PWA reproduction of a popular side-scroller game.
 
-- This will be a React & Redux app. 
-- It should work both on desktop and mobile devices
-- It should be fully responsive (up to Full HD resolution)
-- (optional) It should work as a PWA
+Live demo: https://kozlovvski.github.io/ReactFlappyBird
 
-### 2. Get needed resources
+## Current tasks
 
-The only external resource I will use is the Flappy Bird spritesheet which I found somewhere in Google Images
+* Create a better way to detect collisions. Currently `getBoundingClientRect()` is used to get the coordinates of the bird, but that doesn't take rotation into account and sometimes game ends when it would seem that the bird didn't hit a pipe
 
-![Flappy Bird Spritesheet](https://www.spriters-resource.com/download/59894/)
+## Getting Started
 
-I aim to cut that into separate files because I will use some of these graphics as a `background-image` with `background-repeat` property. 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### 3. Describe the basic logic behind the app
+### Prerequisites
 
-The end product preview:
-![Flappy Bird GIF](https://cdn-images-1.medium.com/max/1200/1*G-uGz8s2ti5rgVTz7AHU1w.gif)
+You need to have installed `npm` and preferably `yarn`
 
-Inside `App` component there will be two main components: one `Bird` and some number of `Pipe` components. There should also be a `gameLoop` function which should run in loop. On every frame `gameLoop` should check if `Bird` collided with any of the `Pipe` components. If a collision occurs, `gameLoop` should be stopped and the app should render a `Summary` component with achieved score and a button to play game once more. Should this button be clicked, the `gameLoop` will start again.
+### Installing
 
-`Pipe` components and background elements will be animated using CSS animations. `Bird` component will be interactive, so it will store variables needed to determine its position and movement and it will be rendered on every frame using CSS transform property.
+First of all, fork the repository and clone it. Run terminal inside the cloned directory and run:
+
+```
+yarn
+```
+
+This will install necessary packages. When packages are installed, run a development server with:
+
+```
+yarn start
+```
+
+Open `localhost:3000` in browser and app should be running.
+
+
+## Deployment
+
+Use: 
+
+```
+yarn deploy
+```
+
+This will fire a build process and push the production version of the app to the `gh-pages` branch
+
+## Built With
+
+* [Create React App](https://github.com/facebook/create-react-app) - Tool for quick React.js dev environment setup
+* [Redux](https://github.com/reduxjs/redux) - Central storage for JavaScript apps
+
+## Contributing
+
+Currently contributions are disabled.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
